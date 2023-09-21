@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Uploader</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Image Uploader</h1>
+        <form action="upload.php" method="POST" enctype="multipart/form-data">
+            <input type="file" name="image" accept="image/*" required>
+            <input type="submit" value="Upload">
+        </form>
+    </div>
+    <div id="imageLinkContainer" class="container">
+        <?php
+        if (isset($_GET['image_link'])) {
+            echo '<h2>Image Link:</h2>';
+            echo '<p><a href="' . $_GET['image_link'] . '" target="_blank">' . $_GET['image_link'] . '</a></p>';
+        }
+        ?>
+    </div>
+</body>
+</html>
